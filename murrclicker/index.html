@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Murr Clicker</title>
 	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;500&family=Noto+Sans+TC&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300;500&family=Noto+Sans+TC&display=swap"rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1" >
 </head>
 
 <body>
 	<div class="container">
-		<a href=# id="cookie" onclick="incrementScore()"><img src="img/murr_button.png"></a>
+		<div class="murrMain">
+			<a href=# id="cookie" onclick="incrementScore();"><img src="img/murr_button.png"></a>
+		</div>
+		<br>
+		<p>靈魂碎片:</p>
+		<span id="score">0</span>
 	</div>
-	<br>    
-	<p>ムル數目:</p>
-	<span id="score">0</span>
-	<div class="mover"></div>
-	
+	<img id="bonus" src="img/murr_button.png" style="width: 50px; height: 50px;display: none;">
+
 	<script src="cookie-clicker.js"></script>
 
 </body>
+
 </html>

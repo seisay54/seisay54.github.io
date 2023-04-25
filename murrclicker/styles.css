@@ -1,110 +1,120 @@
 body {
+    text-align: center;
+    background-color: #21245c;
+    font-family: 'Chivo Mono', monospace;
+    color: whitesmoke;
+}
+
+.container {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    text-align: center;
-    background-color: #21245c;
 }
 
-p{
-    font-family: 'Chivo Mono', monospace;
+p {
     font-size: 20px;
-    color: whitesmoke;
 }
 
 #score {
-    font-family: 'Chivo Mono', monospace;
     font-size: 35px;
-    color: whitesmoke;
-
 }
-.container{
+
+.murrMain {
+    margin-top: 5%;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    background:url(img/moon.png) center center no-repeat;
-    background-size: 600px 400px;
-}
-
-#cookie img {
-    margin-top: 40%;
-    width: 350px;
-	height: 350px;
-    animation-name: imgani;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    z-index: 2;
+    align-items: center;
+    background: url(img/moon.png) center center no-repeat;
+    background-size: 600px;
 }
 
 @keyframes imgani {
-    0%   {left:0px; top:0px; transform:rotate(15deg)}
-    25%  {left:5px; top:0px; transform:rotate(-15deg)}
-    50%  {left:25px; top:1px; transform:rotate(15deg)}
-    75%  {left:0px; top:25px; transform:rotate(-15deg)}
-    100% {left:0px; top:0px; transform:rotate(15deg)}            
+    0% {
+        left: 0px;
+        top: 0px;
+        transform: rotate(2deg)
+    }
+
+    25% {
+        left: 5px;
+        top: 0px;
+        transform: rotate(-2deg)
+    }
+
+    50% {
+        left: 25px;
+        top: 1px;
+        transform: rotate(2deg)
+    }
+
+    75% {
+        left: 0px;
+        top: 25px;
+        transform: rotate(-2deg)
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+        transform: rotate(2deg)
+    }
 }
 
-.mover {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: -10px;
-    margin-left: -10px;
-    border-radius: 50%;
-    left: var(--mouse-x);
-    top: var(--mouse-y);
-    height: 20px;
-    width: 20px;
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.5);
-    transition: all 0.1s ease-out;
-    z-index: 1;
-  }
-  .mover.active {
-    transform: scale(0.8);
-  }
-  
-  .mouse {
-    pointer-events: none;
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    left: var(--mouse-btn-x);
-    top: var(--mouse-btn-y);
-  }
-  .mouse .svg-2 {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    top: -40px;
-    left: -40px;
-    opacity: 0.7;
-  }
-  .mouse .svg-2 path {
-    stroke: #1A1D2C;
-    stroke: #A0C3F1;
-    stroke: #bdd5ff;
-    stroke-width: 3;
-    stroke-linecap: round;
-    stroke-dashoffset: 25%;
-    stroke-dasharray: 100%;
-    animation: svg2 1s linear forwards;
-  }
-  .mouse .svg-2 .svg_obj {
-    stroke-width: 5;
-    opacity: 0.5;
-  }
-  
-  @keyframes svg2 {
+#cookie img {
+    margin-top: 20%;
+    width: 80%;
+    animation: imgani 2s infinite;
+    z-index: 2;
+}
+
+#cookie img:active {
+    -webkit-animation-name: shakeY;
+    animation-name: shakeY 1s;
+}
+
+@keyframes fadeinout {
     0% {
-      stroke-dashoffset: 100%;
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0)
     }
+
     50% {
-      stroke-dashoffset: 0;
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
     }
+
     100% {
-      stroke-dashoffset: -100%;
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0)
+    }
+}
+
+.animate__fadeInDown {
+    opacity: 0;
+    animation: fadeInDown 1.5s ease forwards;
+}
+
+.animate__fadeOutDown {
+    animation: fadeOutDown 2s ease forwards;
+}
+
+@media only screen and (max-width: 450px) {
+    .murrMain {
+        margin-top: 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(img/moon.png) center center no-repeat;
+        background-size: 450px;
+    }
+
+    #cookie img {
+        padding-top: 20%;
+        width: 80%;
+        animation: imgani 2s infinite;
+        z-index: 2;
     }
   }

@@ -1,0 +1,53 @@
+@keyframes imgani {
+    0% {
+        left: 0px;
+        top: 0px;
+        transform: rotate(2deg);
+    }
+
+    25% {
+        left: 5px;
+        top: 0px;
+        transform: rotate(-2deg);
+    }
+
+    50% {
+        left: 25px;
+        top: 1px;
+        transform: rotate(2deg);
+    }
+
+    75% {
+        left: 0px;
+        top: 25px;
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes fadeinout {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(100px);
+         transform: translateY(100px);
+    }
+}

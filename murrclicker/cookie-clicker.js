@@ -1,35 +1,39 @@
 var score = 0;
-var cookieButton = document.getElementById("cookie");
+var cookieButton = document.getElementById("murrMain");
+
+cookieButton.addEventListener("click", function() {
+	incrementScore();
+	dropPic();
+  });
 
 function incrementScore() {
 	score += 1;
 	document.getElementById("score").innerHTML = score;
-}
+	
+	// Change the image when score over 211
+	if (score >= 211) {
+    cookieButton.style.backgroundImage = "url(img/murr_smart.png)";
+  }
+};
 
-// Add an event listener to the cookie button
-cookieButton.addEventListener("click", function () {
-	// Select the bonus image element
-	var bonusImage = document.getElementById("bonus");
-
-	// Set the position of the bonus image element to a random position
+function dropPic() {
+	var bonusImage = document.createElement("img");
+	bonusImage.src = "img/murr_button.png";
+	bonusImage.style.width = "50px";
+	bonusImage.style.height = "50px";
 	bonusImage.style.display = "block";
+	document.body.appendChild(bonusImage);
+
+	// random place
 	bonusImage.style.position = "absolute";
-	bonusImage.style.left = Math.floor(Math.random() * 1500) + "px";
-	bonusImage.style.top = Math.floor(Math.random() * 500) + "px";
+	bonusImage.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+	bonusImage.style.top = Math.floor(Math.random() * window.innerHeight) -300 + "px";
 
-	// Add the fade-in class to the bonus image element
-	bonusImage.classList.add("animate__fadeInDown");
-
-	// Remove the fade-in class and add the fade-out class after 1 second
-	setTimeout(function () {
-		bonusImage.classList.remove("animate__fadeInDown");
-		bonusImage.classList.add("animate__fadeOutDown");
-	}, 800);
-
-	// Hide the bonus image element after 2 seconds
-	setTimeout(function () {
-		bonusImage.style.display = "none";
-		bonusImage.classList.remove("animate__fadeOutDown");
-	}, 2000);
-
-});
+	// fade-in-out
+	bonusImage.classList.add("fadeinout");
+	bonusImage.addEventListener("animationend", function() {
+	bonusImage.classList.remove("bonus-animation");
+	bonusImage.style.display = "none";
+	
+	});
+};

@@ -37,7 +37,7 @@ p {
     margin-top: 10%;
     width: 450px;
 	height: 450px;
-	background: url("img/murr_button.png") center center no-repeat;
+	background: url(img/murr_button.png) center center no-repeat;
 	background-size: 90%;
 	border: 0;
     text-decoration: none;
@@ -57,7 +57,6 @@ p {
 
 @media only screen and (max-width: 450px) {
     .scene {
-        position:relative;
 		width: 100%;
 		height: 100%;
         display: flex;
@@ -71,7 +70,7 @@ p {
     margin-top: 10%;
     width: 450px;
 	height: 450px;
-	background: url("img/murr_button.png") center 120% no-repeat;
+	background: url(img/murr_button.png) center 120% no-repeat;
 	background-size: 90%;
 	border: 0;
     text-decoration: none;

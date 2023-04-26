@@ -33,20 +33,15 @@ p {
     background-size: 600px;
 }
 
-#murrMain {
-    margin-top: 10%;
-    width: 450px;
-	height: 450px;
-	background: url(img/murr_button.png) center center no-repeat;
-	background-size: 90%;
-	border: 0;
-    text-decoration: none;
-    display: inline-block;
+#murrMain img {
+    margin-top: 20%;
+    padding-top: 5%;
+    width: 80%;
 	animation: imgani 2s infinite;
 	z-index: 2;
 }
 
-#murrMain:active {
+#murrMain img:active {
     -webkit-animation-name: shakeY;
     animation-name: shakeY 1s;
 }
@@ -57,26 +52,12 @@ p {
 
 @media only screen and (max-width: 450px) {
     .scene {
-		width: 100%;
-		height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: url(img/moon.png) center center no-repeat;
         background-size: 450px;
     }
 
-	#murrMain {
-    margin-top: 10%;
-    width: 450px;
-	height: 450px;
-	background: url(img/murr_button.png) center 120% no-repeat;
-	background-size: 90%;
-	border: 0;
-    text-decoration: none;
-    display: inline-block;
-	animation: imgani 2s infinite;
-	z-index: 2;
-}
-	
+	#murrMain img {
+        margin-top: 0;
+        padding-top: 40%;
+        width: 90%;
+    }
   }

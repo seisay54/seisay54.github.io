@@ -11,11 +11,8 @@ function incrementScore() {
 	document.getElementById("score").innerHTML = score;
 	
 	// Change the image when score over 211
-<<<<<<< HEAD
 	if (score >= 211) {
-=======
-	if (score >= 11) {
->>>>>>> babba5683afa0f28e406c7298beffb16dc7bfd37
+
 		document.getElementById("murrPic").src="img/murr_smart.png";
 	}
 };

@@ -11,9 +11,9 @@ function incrementScore() {
 	document.getElementById("score").innerHTML = score;
 	
 	// Change the image when score over 211
-	if (score >= 211) {
-    cookieButton.style.backgroundImage = "url(img/murr_smart.png)";
-  }
+	if (score >= 11) {
+		document.getElementById("murrPic").src="img/murr_smart.png";
+	}
 };
 
 function dropPic() {
